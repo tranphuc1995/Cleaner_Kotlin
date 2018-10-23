@@ -6,15 +6,15 @@ class MethodStatic {
 
             if ((bytes / 1000000000) > 0) {
 
-                return ("" + Math.round((bytes.toDouble() / 1000000000) * 10) / 10.0 + "GB");
+                return ("" + Math.round((bytes.toDouble() / 1000000000) * 10) / 10.0 + " GB");
 
             } else if ((bytes / 1000000) > 0) {
 
-                return ("" + Math.round((bytes.toDouble() / 1000000) * 10) / 10.0 + "MB");
+                return ("" + Math.round((bytes.toDouble() / 1000000) * 10) / 10.0 + " MB");
 
             } else if ((bytes / 1000) > 0) {
 
-                return ("" + Math.round((bytes.toDouble() / 1000) * 10) / 10.0 + "kB");
+                return ("" + Math.round((bytes.toDouble() / 1000) * 10) / 10.0 + " kB");
 
             } else {
 

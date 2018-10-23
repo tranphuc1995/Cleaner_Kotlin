@@ -1,4 +1,4 @@
-package com.tranphuc.cleanerkt
+package com.tranphuc.cleanerkt.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import com.ram.speed.booster.interfaces.CleanListener
 import android.util.Log
 import com.ram.speed.booster.utils.ProcessInfo
 import com.ram.speed.booster.interfaces.ScanListener
+import com.tranphuc.cleanerkt.R
 import java.util.*
 
 

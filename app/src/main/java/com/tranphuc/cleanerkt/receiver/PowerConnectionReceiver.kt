@@ -1,4 +1,4 @@
-package com.tranphuc.cleanerkt.broadcast_receiver
+package com.tranphuc.cleanerkt.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context

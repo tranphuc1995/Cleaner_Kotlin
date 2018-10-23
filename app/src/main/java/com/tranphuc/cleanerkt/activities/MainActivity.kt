@@ -1,4 +1,4 @@
-package com.tranphuc.cleanerkt
+package com.tranphuc.cleanerkt.activities
 
 import android.app.ActivityManager
 import android.content.Context
@@ -10,10 +10,10 @@ import android.os.Environment
 import android.os.Handler
 import android.os.StatFs
 import com.bumptech.glide.Glide
+import com.tranphuc.cleanerkt.R
 import com.tranphuc.cleanerkt.global.MethodStatic
 import kotlinx.android.synthetic.main.layout_ram_storage_cpu.*
-import com.tranphuc.cleanerkt.broadcast_receiver.PowerConnectionReceiver
-import kotlinx.android.synthetic.main.activity_main.*
+import com.tranphuc.cleanerkt.receiver.PowerConnectionReceiver
 import kotlinx.android.synthetic.main.layout_direction.*
 
 
@@ -29,7 +29,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addEvents() {
-        linear_memory_boost_click();
+        linear_memory_boost_click()
+        linear_junk_clean_click()
+    }
+
+    private fun linear_junk_clean_click() {
+        linear_junk_clean.setOnClickListener {
+            var intent: Intent = Intent(MainActivity@ this, JunkCleanActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun linear_memory_boost_click() {

@@ -3,8 +3,8 @@
     package="com.tranphuc.cleanerkt">
 
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
-
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MemoryBoostActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:name=".activities.MemoryBoostActivity"
+            android:theme="@style/AppTheme" />
+
         <service android:name="com.ram.speed.booster.services.LightService" />
+
+        <activity android:name=".activities.JunkCleanActivity"></activity>
     </application>
+
 </manifest>
