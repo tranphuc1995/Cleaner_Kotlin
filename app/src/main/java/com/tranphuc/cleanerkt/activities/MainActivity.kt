@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.layout_direction.*
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
+    private var broadcastReceiver: PowerConnectionReceiver = PowerConnectionReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun showInfoBattery() {
         var intentFilter: IntentFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
-        var broadcastReceiver: PowerConnectionReceiver = PowerConnectionReceiver()
         broadcastReceiver.ProgressBattery = progress_battery
         broadcastReceiver.TextViewPercentBattey = textview_percent_battery
         MainActivity@ this.registerReceiver(broadcastReceiver, intentFilter)
@@ -128,5 +128,15 @@ class MainActivity : AppCompatActivity() {
         var percent: Long = 0
         percent = Math.round((((total - available).toDouble()) / total.toDouble()) * 100)
         return percent
+    }
+
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(broadcastReceiver)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showInfoBattery()
     }
 }

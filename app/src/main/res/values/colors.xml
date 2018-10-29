@@ -10,4 +10,5 @@
     <color name="colorGreen">#2ecc71</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTotal">#95a5a6</color>
+    <color name="colorTitleJunk">#bdc3c7</color>
 </resources>
